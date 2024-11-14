@@ -28,20 +28,11 @@ namespace DiceGame.Repository.Script
             while (step > 0)
             {
                 int stepUser, stepPC;
-                confStep = new Сonfirm(5);
-                if (UserIsWin)
-                {
-                    stepUser = StepUser(dices);
-                    StepPCStart(confStep);
-                    stepPC = StepPCFinish(confStep);
-                }
-                else
-                {
-                    StepPCStart(confStep);
-                    stepUser = StepUser(dices);
-                    stepPC = StepPCFinish(confStep);
-                }
-
+                confStep = new Сonfirm(5);                
+                StepPCStart(confStep);
+                stepUser = StepUser(dices);
+                stepPC = StepPCFinish(confStep);
+                
                 Console.WriteLine($"The result is {stepPC} + {stepUser} = {(stepPC + stepUser) % 6} (mod 6).");
 
                 int newCountUser = diceUser.Edge[stepUser];
