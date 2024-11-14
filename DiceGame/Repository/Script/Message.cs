@@ -9,7 +9,7 @@ namespace DiceGame.Repository.Script
         public static void LogicGame(bool UserIsWin, List<Dice> dices)
         {
             _helpDices = dices.ToArray().ToList();
-            int step = 2;
+            int step = 1;
             int countUser = 0;
             int countPC = 0;
             Dice diceUser;
